@@ -9,4 +9,9 @@ const CurrentScore = (props) => {
     );
 }
 
+const mapDispatchToProps = (state) => ({
+    actions: state.actions,
+    actionTypes: state.actionTypes
+});
+
 export default CurrentScore;
