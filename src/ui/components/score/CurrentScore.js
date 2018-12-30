@@ -1,17 +1,36 @@
+import { connect } from "react-redux";
+import { compose, withProps } from "recompose";
+import { getTotalScore } from "GoalOneApp/src/helpers/getScore.js";
 import React from "react";
 import { Text } from "native-base";
+import { View } from "react-native";
 
 const CurrentScore = (props) => {
-    return (
-        <Text>
+    const { totalScore } = props;
 
-        </Text>
+    return (
+        <View>
+            <Text
+                style = {{
+                    fontSize: 30
+                }}
+            >
+                {totalScore}
+            </Text>
+        </View>
     );
 }
 
-const mapDispatchToProps = (state) => ({
+const mapStateToProps = (state) => ({
     actions: state.actions,
     actionTypes: state.actionTypes
 });
 
-export default CurrentScore;
+const enhance = compose(
+    connect(mapStateToProps),
+    withProps(({ actions, actionTypes }) => ({
+        totalScore: getTotalScore({ actions, actionTypes})
+    }))
+);
+
+export default enhance(CurrentScore);

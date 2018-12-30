@@ -1,9 +1,14 @@
 import React from "react";
-import { Text } from "native-base"
+import { Container, Content } from "native-base";
+import { CurrentScore } from "GoalOneApp/src/ui/components/score";
 
 const HomeScreen = (props) => {
     return (
-        <Text> Home </Text>
+        <Container>
+            <Content>
+                <CurrentScore />
+            </Content>
+        </Container>
     )
 };
 
