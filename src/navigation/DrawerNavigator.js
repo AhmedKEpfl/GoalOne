@@ -2,7 +2,7 @@ import { createAppContainer, createDrawerNavigator } from "react-navigation";
 import { HomeScreen, SummaryScreen } from "GoalOneApp/src/ui/screens";
 import React from "react";
 
-const Navigation = createAppContainer(createDrawerNavigator({
+const DrawerNavigator = createAppContainer(createDrawerNavigator({
     Home: {
         screen: HomeScreen
     },
@@ -11,4 +11,4 @@ const Navigation = createAppContainer(createDrawerNavigator({
     }
 }));
 
-export default Navigation;
+export default DrawerNavigator;

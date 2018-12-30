@@ -1,5 +1,5 @@
 import HeightAdapter from "./ui/layout/HeightAdapter.js";
-import Navigation from "./navigation/Navigation.js";
+import { StackNavigator } from "./navigation";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import getReduxStore from "./api/state/configureStore.js";
@@ -12,7 +12,7 @@ const App = (props) => (
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
             <HeightAdapter>
-                <Navigation />
+                <StackNavigator />
             </HeightAdapter>
         </PersistGate>
     </Provider>
