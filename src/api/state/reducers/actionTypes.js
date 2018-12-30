@@ -1,4 +1,6 @@
-const actionTypes = (state = [], action) => {
+import { defaultActions } from "GoalOneApp/src/api/defaultActions.js";
+
+const actionTypes = (state = defaultActions, action) => {
     switch(action.type) {
         case "ADD_ACTION_TYPE":
             const newActionType = action.actionType;
@@ -9,4 +11,6 @@ const actionTypes = (state = [], action) => {
         default:
             return state;
     }
-}
+};
+
+export default actionTypes;

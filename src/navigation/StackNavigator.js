@@ -1,10 +1,13 @@
 import { createAppContainer, createStackNavigator } from "react-navigation";
-import { MainScreen } from "GoalOneApp/src/ui/screens";
+import { SetActionTypeScreen, MainScreen } from "GoalOneApp/src/ui/screens";
 import React from "react";
 
 const StackNavigator = createAppContainer(createStackNavigator({
     Main: {
         screen: MainScreen
+    },
+    SetActionType: {
+        screen: SetActionTypeScreen
     }
 }))
 
