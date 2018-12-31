@@ -8,6 +8,7 @@ const _ActionTypesView = (props) => {
     return actionTypes.map((actionType, index) => (
         <ActionTypeComponent
             key = {index}
+            _id = {index}
             {...actionType}
         />
     ))

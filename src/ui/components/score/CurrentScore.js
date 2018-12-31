@@ -29,7 +29,7 @@ const mapStateToProps = (state) => ({
 const enhance = compose(
     connect(mapStateToProps),
     withProps(({ actions, actionTypes }) => ({
-        totalScore: getTotalScore({ actions, actionTypes})
+        totalScore: getTotalScore({ actions, actionTypes })
     }))
 );
 

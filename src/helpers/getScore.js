@@ -11,5 +11,9 @@ export function getScore({ actionTypeId, date, actionTypes }) {
 }
 
 export function getTotalScore({ actions, actionTypes }) {
+    console.log("DEBUG", {
+        actions,
+        actionTypes
+    })
     return actions.reduce((acc, action) => acc + getScore({ ...action, actionTypes }), 0);
 }

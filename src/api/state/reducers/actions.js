@@ -1,9 +1,7 @@
 const actions = (state=[], action) => {
     switch(action.type) {
-        case "INCREMENT":
-            return state + 1;
-        case "DECREMENT":
-            return state - 1;
+        case "ADD_ACTION":
+            return [ ...state, action.action ];
         default:
             return state;
     }

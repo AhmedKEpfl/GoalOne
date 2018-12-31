@@ -1,11 +1,16 @@
+import { compose, withHandlers } from "recompose";
+import { connect } from "react-redux";
 import { Left, ListItem, Right, Text } from "native-base";
 import PropTypes from "prop-types"
 import React from "react";
 
 const _ActionTypeComponent = (props) => {
-    const { name, score } = props
+    const { addAction, name, score } = props;
     return (
-        <ListItem>
+        <ListItem
+            button
+            onPress = {addAction}
+        >
             <Left>
                 <Text>
                     {name}
@@ -22,7 +27,21 @@ const _ActionTypeComponent = (props) => {
 
 _ActionTypeComponent.propTypes = {
     name: PropTypes.string,
-    score: PropTypes.number
+    score: PropTypes.array
 };
 
-export default _ActionTypeComponent;
+const mapStateToProps = () => ({});
+const mapDispatchToProps = (dispatch) => ({
+    addAction: (actionTypeId) => dispatch(addAction(actionTypeId))
+});
+
+const enhance = compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withHandlers({
+        addAction: ({ _id, addAction }) => () => {
+            addAction({ actionTypeId: _id });
+        }
+    })
+)
+
+export default enhance(_ActionTypeComponent);
