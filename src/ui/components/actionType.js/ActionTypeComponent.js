@@ -3,9 +3,11 @@ import { connect } from "react-redux";
 import { Left, ListItem, Right, Text } from "native-base";
 import PropTypes from "prop-types"
 import React from "react";
+import _ from "lodash";
 
 const _ActionTypeComponent = (props) => {
-    const { addAction, name, score } = props;
+    const { addAction, name, scores } = props;
+    const lastScore = _.last(scores).score;
     return (
         <ListItem
             button
@@ -18,7 +20,7 @@ const _ActionTypeComponent = (props) => {
             </Left>
             <Right>
                 <Text>
-                    {score}
+                    {lastScore}
                 </Text>
             </Right>
         </ListItem>
@@ -27,7 +29,7 @@ const _ActionTypeComponent = (props) => {
 
 _ActionTypeComponent.propTypes = {
     name: PropTypes.string,
-    score: PropTypes.array
+    scores: PropTypes.array
 };
 
 const mapStateToProps = () => ({});

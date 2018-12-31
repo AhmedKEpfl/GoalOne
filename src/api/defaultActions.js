@@ -1,8 +1,8 @@
-function getDefaultScores(score) {
+export function getDefaultScores(score) {
     return [
         {
             startDate: 0,
-            score
+            score: Number(score)
         }
     ]
 }

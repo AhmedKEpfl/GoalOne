@@ -9,7 +9,9 @@ const CurrentScore = (props) => {
     const { totalScore } = props;
 
     return (
-        <View>
+        <View style = {{
+            alignItems: "center"
+        }}>
             <Text
                 style = {{
                     fontSize: 30
